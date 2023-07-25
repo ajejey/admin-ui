@@ -1,0 +1,156 @@
+@import '../../../App.css';
+
+.searchInput {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    font-size: 16px;
+    outline: none;
+}
+
+
+.adminTableContainer {
+    min-height: 500px;
+}
+
+.adminTable {
+    width: 100%;
+    text-align: left;
+    margin: 16px 0;
+    border-collapse: collapse;
+}
+
+.actionButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.actionButton:hover {
+    background-color: var(--tertiary-color);
+}
+
+
+.adminTableBody {
+    text-align: left;
+}
+
+thead {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 6px 0;
+}
+
+th {
+    text-align: left;
+    padding: 6px 0;
+}
+
+td {
+    padding: 8px 0;
+}
+
+.noDataRow {
+    text-align: center;
+    padding: 8px 0;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    th {
+        display: none;
+    }
+
+    td {
+        display: grid;
+        gap: 0.7rem;
+        grid-template-columns: 15ch auto;
+        padding: 0.4rem 0.7rem;
+    }
+
+    td:first-child {
+        padding-top: 1rem;
+    }
+
+    td:last-child {
+        padding-bottom: 1rem;
+    }
+
+    td::before {
+        content: attr(data-cell) ": ";
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+}
+
+.AdminPagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.adminPaginationButtons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginationButton {
+    padding: 6px 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.paginationButton:hover {
+    background-color: var(--tertiary-color);
+}
+
+.deleteSelectedButton {
+    padding: 6px 8px;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--danger-color);
+    cursor: pointer;
+}
+
+.deleteSelectedButton:hover {
+    background-color: var(--danger-color-secondary);
+}
+
+.deleteSelectedButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: rgb(97, 97, 97);
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .paginationContainer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .AdminPagination {
+        flex-direction: column;
+    }
+
+    .deleteSelectedButton {
+        margin: 10px auto;
+    }
+
+    .adminPaginationButtons {
+        margin: 10px auto;
+    }
+}
